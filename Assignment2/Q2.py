@@ -21,8 +21,8 @@ def judge(Board, Player, count, size):
 def main():
     size = int(input('Size--> '))
     Board = [x for x in range(size ** 2)]
-    print(Board)
     printBoard(size, Board)
+
     count, Player = 0, 'X'
 
     while not judge(Board, Player, count, size):

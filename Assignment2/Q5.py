@@ -44,7 +44,7 @@ def judgeWinner(board, player):
     cases += [[board[i][i+index] for i in range(c) if i <= r-1 and i+index <= c-1] for index in range(r)] + [[board[i+index][i] for i in range(c) if i+index <= r-1 and i <= c-1] for index in range(r)] #diagonal starts from right
     cases += [[board[i][index-i] for i in range(r) if index - i >= 0 and i <= c-1] for index in range(c-1,-1,-1)] + [[board[index-i][i] for i in range(c) if index - i >= 0 and i <= c-1] for index in range(r-1,-1,-1)] #diagonal starts from left
     cases += [[board[row][col] for row in range(r)] for col in range(c)] #vertical
-
+    
     for g in cases:
         count = 0
         for j in range(len(g)-1):
@@ -64,7 +64,7 @@ def main():
             player = 'X'
         else: 
             player = 'O'
-            
+
         if makeMove(board, player) or judgeWinner(board, player):
             break
     else:
