@@ -11,7 +11,7 @@ def fly(distance, station, start, end):
 
 def main():
     N, D = list(map(int, input().split()))
-    station = tuple([map(int,input().split()) for i in range(N)])
+    station = [tuple(map(int,input().split())) for i in range(N)]
     print(fly(D, station, tuple(map(int, input().split())),tuple(map(int,input().split()))))
 
 main()
